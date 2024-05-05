@@ -60,3 +60,20 @@ Route::post('/ad/timkiemAdmin',[AdminController::class,'searchAdmin']);
  Route::post('/ad/updateDM/{category_product_id}',[CategoryProduct::class,'update_category_product']);
 
 
+   //brand_product_them
+   Route::get('/ad/add_brand_product',[BrandProduct::class,'add_brand_product']);
+   Route::get('/ad/all_brand_product',[BrandProduct::class,'all_brand_product']);
+   Route::post('/ad/saveTH',[BrandProduct::class,'save_brand_product']);
+  //brand_all_tick_hien thi
+   Route::get('/ad/unactive-brand-product/{brand_product_id}',[BrandProduct::class,'unactive_brand_product']);
+   Route::get('/ad/active-brand-product/{brand_product_id}',[BrandProduct::class,'active_brand_product']); 
+   //brand_update
+   Route::get('/ad/edit_brand_product/{brand_product_id}',[BrandProduct::class,'edit_brand_product']);
+   //xoa thuong hieu
+   Route::get('/ad/delete_brand_product/{brand_product_id}',[BrandProduct::class,'delete_brand_product']);
+   //save thuong hieu
+   Route::post('/ad/updateTH/{brand_product_id}',[BrandProduct::class,'update_brand_product']);
+   //Tim kiem thuong hieu
+   Route::post('/ad/timkiemBR',[BrandProduct::class,'searchBrand']);
+
+
