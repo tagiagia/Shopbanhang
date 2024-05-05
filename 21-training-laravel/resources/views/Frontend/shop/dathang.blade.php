@@ -44,7 +44,7 @@
 					</ul>
 				</div>
 				<div class="clearfix"></div>
-			</div> <!-- .container -->
+			</div> <!-- .container f-->
 		</div> <!-- .header-top -->
 		<div class="header-body">
 			<div class="container beta-relative">

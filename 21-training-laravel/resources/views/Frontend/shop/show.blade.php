@@ -46,7 +46,7 @@
 				</div>
 				<div class="clearfix"></div>
 			</div> <!-- .container -->
-		</div> <!-- .header-top -->
+		</div> <!-- .header-top f-->
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">

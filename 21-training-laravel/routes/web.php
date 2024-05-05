@@ -60,7 +60,7 @@ Route::post('/ad/timkiemAdmin',[AdminController::class,'searchAdmin']);
  Route::post('/ad/updateDM/{category_product_id}',[CategoryProduct::class,'update_category_product']);
 
 
-   //brand_product_them
+   //brand_product_them d
    Route::get('/ad/add_brand_product',[BrandProduct::class,'add_brand_product']);
    Route::get('/ad/all_brand_product',[BrandProduct::class,'all_brand_product']);
    Route::post('/ad/saveTH',[BrandProduct::class,'save_brand_product']);
