@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('hoadondathang', function (Blueprint $table) {
             $table->id('id_hoadon');
-            // $table->string('id_user');
-            // $table->string('id_sp');
-            // $table->string('diachi');
-            // $table->string('sdt');
+            $table->string('id_user');
+            $table->string('id_sp');
+            $table->string('diachi');
+            $table->string('sdt');
             $table->timestamps();
         });
     }
