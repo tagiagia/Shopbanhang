@@ -33,4 +33,15 @@ Route::get('/', function () {
 Route::get('/',[Front\HomeController::class,'index']);
 // login admin
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
+Route::get('/ad/logout',[AdminController::class,'logout']);
 Route::get('/ad/login_admin',[AdminController::class,'index']);
+Route::post('/ad/admin-dashboard',[AdminController::class,'dashboard']);
+
+//Admin
+Route::get('/ad/all_admin',[AdminController::class,'all_admin']);
+//xoa admin
+Route::get('/ad/delete_admin/{id}',[AdminController::class,'delete_admin']);
+//Tim kiem admin
+Route::post('/ad/timkiemAdmin',[AdminController::class,'searchAdmin']);
+
+

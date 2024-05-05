@@ -58,7 +58,7 @@ class AdminController extends Controller
         return view('admin.index')->with('admin.all_admin',$manager_admin);
     }
     public function delete_admin($id){
-        DB::table('admin')->where('id',$id)->delete();
+        DB::table('admin')->where('admin_id',$id)->delete();
         Session::put('message','Xóa Người Quản Lý Thành Công');
         return Redirect::to('/ad/all_admin');
     } 
