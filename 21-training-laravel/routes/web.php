@@ -45,3 +45,18 @@ Route::get('/ad/delete_admin/{id}',[AdminController::class,'delete_admin']);
 Route::post('/ad/timkiemAdmin',[AdminController::class,'searchAdmin']);
 
 
+ //category_product_them
+ Route::get('/ad/add_category_product',[CategoryProduct::class,'add_category_product']);
+ Route::get('/ad/all_category_product',[CategoryProduct::class,'all_category_product']);
+ Route::post('/ad/saveDM',[CategoryProduct::class,'save_category_product']);
+//category_all_tick_hien thi
+ Route::get('/ad/unactive-category-product/{category_product_id}',[CategoryProduct::class,'unactive_category_product']);
+ Route::get('/ad/active-category-product/{category_product_id}',[CategoryProduct::class,'active_category_product']); 
+ //category_update
+ Route::get('/ad/edit_category_product/{category_product_id}',[CategoryProduct::class,'edit_category_product']);
+ //xoa danh muc
+ Route::get('/ad/delete_category_product/{category_product_id}',[CategoryProduct::class,'delete_category_product']);
+ //save danh muc
+ Route::post('/ad/updateDM/{category_product_id}',[CategoryProduct::class,'update_category_product']);
+
+
