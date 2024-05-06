@@ -1,9 +1,11 @@
 @extends('admin.index')
 @section('admin_content')
+
+</html>
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Liệt Sản Phẩm
+            Liệt Kê Bài Viết
         </div>
         <div class="row w3-res-tb">
             <div class="col-sm-5 m-b-xs">
@@ -17,14 +19,16 @@
             </div>
             <div class="col-sm-4">
             </div>
-            <div class="col-sm-3">
-                <div class="input-group">
-                    <input type="text" class="input-sm form-control" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button class="btn btn-sm btn-default" type="button">Go!</button>
-                    </span>
+            <form action="/ad/search" method="get">
+                <div class="col-sm-3">
+                    <div class="input-group">
+                        <input name="search" type="text" class="input-sm form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
         <div class="table-responsive">
             <?php
@@ -47,6 +51,7 @@ if($message){
                         <th>Hình Ảnh</th>
                         <th>Danh Mục</th>
                         <th>Thương Hiệu</th>
+                        <th>Liệt Kê Bài Viết</th>
 
                         <th style="width:30px;"></th>
                     </tr>
@@ -61,12 +66,11 @@ if($message){
                         <td>{{$pro->category_name}}</td>
                         <td>{{$pro->brand_name}}</td>
                         <td>
-                            <a href="/ad/add_baiviet/{{$pro->product_id}}" class="active" ui-toggle-class="">
-                                <button>Add Posts</button>
+                            <a href="/ad/lietkebaivietSP/{{$pro->product_id}}" class="active" ui-toggle-class="">
+                                <button>List Posts</button>
                             </a>
                         </td>
                     </tr>
-
                     @endforeach
                 </tbody>
             </table>
