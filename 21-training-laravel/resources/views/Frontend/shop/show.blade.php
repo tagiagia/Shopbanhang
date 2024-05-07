@@ -301,7 +301,7 @@
 				</div>
 				<div class="col-sm-3 aside">
 					<div class="widget">
-						<h3 class="widget-title">Best Sellers</h3>
+						<h3 class="widget-title">Best Seller</h3>
 						<div class="widget-body">
 							<div class="beta-sales beta-lists">
 								<div class="media beta-sales-item">
