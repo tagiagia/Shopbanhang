@@ -33,7 +33,7 @@
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
+						<li><a href=""><i class="fa fa-home"></i> Hồ Chí Minh</a></li>
 						<li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
 					</ul>
 				</div>
@@ -93,7 +93,7 @@
 
 								<div class="cart-item">
 									<div class="media">
-										<a class="pull-left" href="#"><img src="assets/dest/images/products/cart/2.png" alt=""></a>
+										<a class="pull-left" href="#"><img src="assets/dest/images/products/cart/3.png" alt=""></a>
 										<div class="media-body">
 											<span class="cart-item-title">Sample Woman Top</span>
 											<span class="cart-item-options">Size: XS; Colar: Navy</span>
