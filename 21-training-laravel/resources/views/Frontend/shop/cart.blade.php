@@ -212,7 +212,7 @@
 			</div>
 
 
-			<!-- Cart Collaterals   -->
+			<!-- Cart Collaterals -->
 			<div class="cart-collaterals">
 
 				<form class="shipping_calculator pull-left" action="#" method="post">
