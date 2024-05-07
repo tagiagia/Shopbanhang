@@ -1,6 +1,13 @@
+<?php
+	session_start();
+	 // $_SESSION['user_id'] = "";
+	if (empty($_SESSION['user_id'])){
+		$_SESSION['user_id'] = "";
+	}
+?>
+
 <!doctype html>
 <html lang="en">
-
 <head>
     <base href="{{asset('/')}}">
     <meta charset="UTF-8">
@@ -16,42 +23,62 @@
     <link rel="stylesheet" title="style" href="front/css/style.css">
     <link rel="stylesheet" href="front/css/animate.css">
     <link rel="stylesheet" title="style" href="front/css/huong-style.css">
+	
 </head>
 
 <body>
+    <?php
+use App\Http\Controllers\AuthManager;
+$user = new AuthManager;
+?>
+	<div id="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="pull-left auto-width-left">
+					<ul class="top-menu menu-beta l-inline">
+						<li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
+						<li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
+					</ul>
+				</div>
+				<div class="pull-right auto-width-right">
+					<ul class="top-details menu-beta l-inline">
+                        {{-- @auth
+						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{auth()->user()->name}}</a></li>
+						<li><a href="{{route('logout')}}">Logout</a></li>				
+						@else
+						<li><a href="{{route('registration')}}">Đăng kí</a></li>
+						<li><a href="{{route('login')}}">Đăng nhập</a></li>						
+						@endauth --}}
+                        @if (empty($_SESSION['user_id']))
+						<li><a href="{{route('registration')}}">Đăng kí</a></li>
+						<li><a href="{{route('login')}}">Đăng nhập</a></li>	
+					@endif
 
-    <div id="header">
-        <div class="header-top">
-            <div class="container">
-                <div class="pull-left auto-width-left">
-                    <ul class="top-menu menu-beta l-inline">
-                        <li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
-                        <li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
-                    </ul>
-                </div>
-                <div class="pull-right auto-width-right">
-                    <ul class="top-details menu-beta l-inline">
-
-                        <li><a href="#">Đăng kí</a></li>
-                        <li><a href="#">Đăng nhập</a></li>
-                    </ul>
-                </div>
-                <div class="clearfix"></div>
-            </div> <!-- .container -->
-        </div> <!-- .header-top -->
-        <div class="header-body">
-            <div class="container beta-relative">
-                <div class="pull-left">
-                    <a href="index.html" id="logo"><img src="front/img/logolevent.png" width="100px" alt=""></a>
-                </div>
-                <div class="pull-right beta-components space-left ov">
-                    <div class="space10">&nbsp;</div>
-                    <div class="beta-comp">
-                        <form role="search" method="get" id="searchform" action="/">
-                            <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
-                            <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-                        </form>
-                    </div>
+					@if (!empty($_SESSION['user_id']))
+						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{$user->findAuth_id($_SESSION['user_id'])[0]->name}}</a></li>
+						<li><a href="{{route('logout')}}">Logout</a></li>	
+					@endif
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div> <!-- .container -->
+		</div> <!-- .header-top -->
+		<div class="header-body">
+			<div class="container beta-relative">
+				<div class="pull-left">
+					<a href="index.html" id="logo"><img src="front/img/logolevent.png" width="100px" alt=""></a>
+				</div>
+				<div class="pull-right beta-components space-left ov">
+					<div class="space10">&nbsp;</div>
+					<div class="beta-comp">
+						<form action="{{URL::to('/search_product')}}" method="post">
+							{{csrf_field()}}
+						  <div class="input-group">
+								<input type="text" name ="keywords_submit" class="input-sm form-control" placeholder="Search" style="margin-left: -76px" >
+							    <input type="submit" name ="search_items" class="btn btn-info btn-sm" value="Tìm Kiếm" style="padding: 9px" >
+						  </div>
+						  </form>
+					</div>
 
                     <div class="beta-comp">
                         <div class="cart">
@@ -99,6 +126,7 @@
                                             class="cart-total-value">$34.55</span></div>
                                     <div class="clearfix"></div>
 
+
                                     <div class="center">
                                         <div class="space10">&nbsp;</div>
                                         <a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i
@@ -111,27 +139,40 @@
                 </div>
                 <div class="clearfix"></div>
             </div> <!-- .container -->
-        </div> <!-- .header-body -->
-        <div class="header-bottom" style="background-color: #0277b8;">
-            <div class="container">
-                <a class="visible-xs beta-menu-toggle pull-right" href="#"><span
-                        class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
-                <div class="visible-xs clearfix"></div>
-                <nav class="main-menu">
-                    <ul class="l-inline ov">
-                        <li><a href="index.html">Trang chủ</a></li>
-                        <li><a href="#">Sản phẩm</a>
-                            <ul class="sub-menu">
-                            </ul>
-                        </li>
-                        <li><a href="about.html">Giới thiệu</a></li>
-                        <li><a href="/ad/Post_SP">Bài Viết</a></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </nav>
-            </div> <!-- .container -->
-        </div> <!-- .header-bottom -->
+        </div> <!-- .header-body -->      
     </div> <!-- #header -->
+								
+								{{-- </div>
+							</div>
+						</div> <!-- .cart -->
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div> <!-- .container -->
+		</div> <!-- .header-body --> --}}
+		<div class="header-bottom" style="background-color: #0277b8;">
+			<div class="container">
+				<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
+				<div class="visible-xs clearfix"></div>
+				<nav class="main-menu">
+					<ul class="l-inline ov">
+						<li><a href="/">Trang chủ</a></li>
+						<li><a href="#">Sản phẩm</a>
+							<ul class="sub-menu">
+								@foreach ($category as $item)
+									<li><a href="{{route('category',['brand_id' =>$item->category_id])}}">{{$item->category_name}}</a></li>
+								@endforeach
+							</ul>
+						</li>
+						<li><a href="about.html">Giới thiệu</a></li>
+						<li><a href="contacts.html">Liên hệ</a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</nav>
+			</div> <!-- .container -->
+		</div> <!-- .header-bottom -->
+	</div> <!-- #header -->
+
 
     <div class="container">
         <div id="content" class="space-top-none">
@@ -141,59 +182,91 @@
                     <div class="col-sm-12">
                         <div class="beta-products-list">
                             <div class="container">
-                                <div class="mt-5">
-                                    @if($errors->any())
-                                    <div class="col-12">
-                                        @foreach ($errors ->all() as $error)
-                                        <div class="alert alert-danger">{{$error}}</div>
-                                        @endforeach
-                                    </div>
-                                    @endif
-
-                                    @if (session()->has('error'))
-                                    <div class="alert alert-danger">{{session('error')}}</div>
-                                    @endif
-                                    @if (session()->has('success'))
-                                    <div class="alert alert-success">{{session('success')}}</div>
-                                    @endif
-                                </div>
-                                <form action="{{ route('login.post')}}" method="POST" class="ms-auto me-auto mt-3"
-                                    style="width: 500px; padding-top: 2cm">
-                                    @csrf
-                                    <div class="form-group mb-3">
-                                        <input type="text" placeholder="Email" id="email" class="form-control"
-                                            name="email" required autofocus>
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <input type="password" placeholder="Password" id="password" class="form-control"
-                                            name="password" required>
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="remember"> Remember Me
-                                            </label>
+                                <div id="content">
+                                    <div class="row">
+                                        <div class="col-sm-9">
+                                            <div class="row">
+                                                @foreach ($product as $key => $items)
+                                                <div class="col-sm-4">
+                                                    <img src="up/{{$items->product_image}}" alt="">
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <div class="single-item-body" 
+                                                        style="margin-top: 2cm;margin-left: 2cm">
+                                                        <p class="single-item-title">
+                                                        <p name ="product_name">{{$items->product_name}}</p>
+                                                        </p>
+                                                        <p class="single-item-price" style="margin-top: 1cm">
+                                                            <span name ="product_price">{{$items->product_price}}VND</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="single-item-desc"
+                                                        style="margin-left: 2cm ; margin-top: 1cm">
+                                                        <p>{{$items->product_decs}}</p>
+                                                    </div>
+                                           
+													<form action="{{URL::to('/save_cart/'.$items->product_id)}}" method="POST">
+														{{ csrf_field() }}
+                                                    <div class="single-item-caption"style="margin-top: 1cm;margin-left: 2cm">
+														<input style="width: 70px;" name="qty" type="number" min="1" value = "1"/> <br>                           
+														<input name="productid_hidden" type="hidden" min="1" value = "{{$items->product_id}}" /> <br>
+														<button class="add-to-cart pull-left" type="submit" href=""><i class="fa fa-shopping-cart"></i></button>
+                                                        <a class="beta-btn primary" href="/ad/dathang/{{$items->product_id}}">Mua hang</a>
+                                                        <a class="beta-btn primary" href="">Details <i class="fa fa-chevron-right"></i></a>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+													</form>
+                                                </div>
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
-                                    {{-- <div class="form-group mb-3">
-                                        <div class="checkbox">
-                                            <label>
-                                                <a href="{{route("forget.password")}}" style="">Forget Password</a>
-                                    </label>
-                            </div>
-                        </div> --}}
-                        <div class="d-grid mx-auto">
-                            <button type="submit" class="btn btn-dark btn-block">Signin</button>
-                        </div>
-                        </form>
-                    </div>
-                </div> <!-- .beta-products-list -->
-            </div>
-        </div> <!-- end section with sidebar and main content -->
-    </div> <!-- .main-content -->
+                                </div>
+                            </div> <!-- #content -->
+                        </div> <!-- .container -->
+                    </div> <!-- .beta-products-list -->
+                </div>
+            </div> <!-- end section with sidebar and main content -->
+        </div> <!-- .main-content -->
     </div> <!-- #content -->
     </div>
-
+    {{-- show --}}
+    <div class="container">
+        <div id="content" class="space-top-none">
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="beta-products-list">
+                            <h4>New Products</h4>
+                            <div class="row">
+                                @foreach ($all_product as $key =>$items)
+                                <div class="col-sm-3">
+                                    <div class="single-item">
+                                        <div class="single-item-header">
+                                            <a href="{{URL::to('/showproduct/'.$items->product_id)}}"><img
+                                                    src="up/{{$items->product_image}}" alt=""></a>
+                                        </div>
+                                        <div class="single-item-body">
+                                            <p class="single-item-title">{{$items->product_name}}</p>
+                                            <br>
+                                            <p class="single-item-price">
+                                                <span>{{$items->product_price}}</span>
+                                                <br>
+                                                <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div> <!-- .beta-products-list -->
+                    </div>
+                </div> <!-- end section with sidebar and main content -->
+            </div> <!-- .main-content -->
+        </div> <!-- #content -->
+    </div>
+    {{-- end show --}}
     <div id="footer" class="color-div">
         <div class="container">
             <div class="row">

@@ -1,17 +1,10 @@
-<?php
-	//session_start();
-	  //$_SESSION['user_id'] = "";
-	if (empty($_SESSION['user_id'])){
-		$_SESSION['user_id'] = "";
-	}
-	
-?>
 <!doctype html>
 <html lang="en">
 <head>
+	<base href="{{asset('/')}}">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Levents </title>
+	<title>Levents - Tai khoan</title>
 	<link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -24,10 +17,7 @@
 	<link rel="stylesheet" title="style" href="front/css/huong-style.css">
 </head>
 <body>
-	<?php
-	use App\Http\Controllers\AuthManager;
-	$user = new AuthManager();
-?>
+
 	<div id="header">
 		<div class="header-top">
 			<div class="container">
@@ -39,22 +29,13 @@
 				</div>
 				<div class="pull-right auto-width-right">
 					<ul class="top-details menu-beta l-inline">
-						@auth
+                        @auth
 						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{auth()->user()->name}}</a></li>
 						<li><a href="{{route('logout')}}">Logout</a></li>				
 						@else
 						<li><a href="{{route('registration')}}">Đăng kí</a></li>
 						<li><a href="{{route('login')}}">Đăng nhập</a></li>						
 						@endauth
-						{{-- @if (empty($_SESSION['user_id']))
-						<li><a href="{{route('registration')}}">Đăng kí</a></li>
-						<li><a href="{{route('login')}}">Đăng nhập</a></li>	
-						@endif
-
-					@if (!empty($_SESSION['user_id']))
-						<li><a href="{{URL::to('/user/'.auth()->user()->id)}}"><i class="fa fa-user"></i>{{$user->findAuth_id($_SESSION['user_id'])[0]->name}}</a></li>
-						<li><a href="{{route('logout')}}">Logout</a></li>	
-					@endif --}}
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -68,14 +49,12 @@
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>
 					<div class="beta-comp">
-						<form action="{{URL::to('/search_product')}}" method="post">
-							{{csrf_field()}}
-						  <div class="input-group">
-								<input type="text" name ="keywords_submit" class="input-sm form-control" placeholder="Search" style="margin-left: -76px" >
-							    <input type="submit" name ="search_items" class="btn btn-info btn-sm" value="Tìm Kiếm" style="padding: 9px" >
-						  </div>
-						  </form>
+						<form role="search" method="get" id="searchform" action="/">
+					        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
+					        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
+						</form>
 					</div>
+
 					<div class="beta-comp">
 						<div class="cart">
 							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống) <i class="fa fa-chevron-down"></i></div>
@@ -138,90 +117,47 @@
 						<li><a href="/">Trang chủ</a></li>
 						<li><a href="#">Sản phẩm</a>
 							<ul class="sub-menu">
-								@foreach ($category as $item)
-									<li><a href="{{route('category',['brand_id' =>$item->category_id])}}">{{$item->category_name}}</a></li>
-								@endforeach
+
 							</ul>
 						</li>
 						<li><a href="about.html">Giới thiệu</a></li>
-						<li><a href="/ad/Post_SP">Bài Viết</a></li>
+						<li><a href="contacts.html">Liên hệ</a></li>
 					</ul>
 					<div class="clearfix"></div>
 				</nav>
 			</div> <!-- .container -->
 		</div> <!-- .header-bottom -->
 	</div> <!-- #header -->
-	<div class="rev-slider">
-	<div class="fullwidthbanner-container">
-					<div class="fullwidthbanner">
-						<div class="bannercontainer" >
-					    <div class="banner" >
-								<ul>
-									<!-- THE FIRST SLIDE -->
-									<li data-transition="boxfade" data-slotamount="20" class="active-revslide" style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
-						            <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-													<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="front/img/home1.jpg" data-src="front/img/home1.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('front/img/home1.jpg'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-													</div>
-												</div>
-
-						        </li>
-								<li data-transition="boxfade" data-slotamount="20" class="active-revslide" style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
-						          <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-												<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="front/img/home2.jpg" data-src="front/img/home2.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('front/img/home2.jpg'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-											</div>
-											</div>
-
-								<li data-transition="boxfade" data-slotamount="20" class="active-revslide" style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
-						            <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-													<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="front/img/home3.jpg" data-src="front/img/home3.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('front/img/home3.jpg'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-												</div>
-											</div>
-
-						        </li>
-
-								<li data-transition="boxfade" data-slotamount="20" class="active-revslide current-sr-slide-visible" style="width: 100%; height: 100%; overflow: hidden; visibility: inherit; opacity: 1; z-index: 20;">
-						            <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-													<div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="front/img/home4.png" data-src="front/img/home4.png" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('front/img/home4.png'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-												</div>
-											</div>
-
-						        </li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="tp-bannertimer"></div>
-					</div>
-				</div>
-				<!--slider-->
-	</div>
-	<div class="container">
+    <div class="container">
 		<div id="content" class="space-top-none">
 			<div class="main-content">
-				<div class="space60">&nbsp;</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<div class="beta-products-list">
-							<h4>New Products</h4>						
-														
+						<div class="beta-products-list">											
 							<div class="row">
-								@foreach ($all_product as $key =>$items)
-								<div class="col-sm-3">
-									<div class="single-item">
-										<div class="single-item-header">
-											<a href="{{URL::to('/showproduct/'.$items->product_id)}}"><img src="up/{{$items->product_image}}" alt=""></a>
-										</div>
-										<div class="single-item-body">
-											<p class="single-item-title">{{$items->product_name}}</p>
-											<br>
-											<p class="single-item-price">
-												<span>{{$items->product_price}}VND</span>
-												<br>
-												<br>
-											</p>
-										</div>
-									</div>
-								</div>
+								@foreach ($users as $key =>$items)
+								<div class="col-sm-3" style="margin-left: 20px ;margin-top: 1cm; width: 130px;">
+                                    <img src="https://levents.asia/wp-content/uploads/l60Hf-150x150.png" style="border-radius: 50%; border: 1px solid gray ">
+                                </div>
+                                <div class="col-sm-3" style="margin-top: 1.4cm ; margin-left: 0.2cm">
+                                    <b style="font-size: 15px">{{$items->name}}</b>
+                                    <p>{{$items->email}}</p>
+                                </div>
+                                <div class="col-sm-3" style="margin-top: 2cm">
+                                    <div style="border-bottom: 1px solid gray; width: 700px; padding-bottom: 10px">
+                                        <h4>Thông tin cá nhân</h4>
+                                    </div>
+                                    <div style="margin-top: 1cm;border-bottom: 1px solid gray; width: 700px; padding-bottom: 7px">
+                                        <p>Họ và tên :</p>
+                                        <br>
+                                        <p>{{$items->name}}</p>
+                                    </div>
+                                    <div style="margin-top: 1cm;border-bottom: 1px solid gray; width: 700px; padding-bottom: 7px">
+                                        <p>Email:</p>
+                                        <br>
+                                        <p>{{$items->email}}</p>
+                                    </div>
+                                </div>
 								@endforeach
 							</div>						
 						</div> <!-- .beta-products-list -->
@@ -229,8 +165,8 @@
 				</div> <!-- end section with sidebar and main content -->
 			</div> <!-- .main-content -->
 		</div> <!-- #content -->
-	</div> 
-
+	</div>
+    {{-- end show --}}
 	<div id="footer" class="color-div">
 		<div class="container">
 			<div class="row">
