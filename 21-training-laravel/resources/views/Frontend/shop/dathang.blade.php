@@ -191,7 +191,7 @@
 										<div class="media">
 											<img width="35%" src="assets/dest/images/shoping1.jpg" alt="" class="pull-left">
 											<div class="media-body">
-												<p class="font-large">Men's Belt</p>
+												<p class="font-large">iPhone 11 Pro Max cũ</p>
 												<span class="color-gray your-order-info">Color: Red</span>
 												<span class="color-gray your-order-info">Size: M</span>
 												<span class="color-gray your-order-info">Qty: 1</span>
