@@ -24,7 +24,7 @@
                 <div class="pull-left auto-width-left">
                     <ul class="top-menu menu-beta l-inline">
                         <li><a href=""><i class="fa fa-home"></i> 218 Tô Ngọc Vân Linh Đông Thủ Đức</a></li>
-                        <li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
+                        <li><a href=""><i class="fa fa-phone"></i> 0123 456 7890</a></li>
                     </ul>
                 </div>
                 <div class="pull-right auto-width-right">
