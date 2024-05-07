@@ -25,8 +25,8 @@
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href=""><i class="fa fa-home"></i> 218 Tô Ngọc Vân Linh Đông Thủ Đức</a></li>
-						<li><a href=""><i class="fa fa-phone"></i> 0123 456 7890</a></li>
+						<li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
+						<li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
 					</ul>
 				</div>
 				<div class="pull-right auto-width-right">
@@ -68,9 +68,9 @@
 									<div class="media">
 										<a class="pull-left" href="#"><img src="assets/dest/images/products/cart/1.png" alt=""></a>
 										<div class="media-body">
-											<span class="cart-item-title">iPhone 11</span>
-											<span class="cart-item-options">Bộ nhớ: 64GB</span>
-											<span class="cart-item-amount">1*<span>5.950.000₫</span></span>
+											<span class="cart-item-title">Sample Woman Top</span>
+											<span class="cart-item-options">Size: XS; Colar: Navy</span>
+											<span class="cart-item-amount">1*<span>$49.50</span></span>
 										</div>
 									</div>
 								</div>
@@ -79,9 +79,9 @@
 									<div class="media">
 										<a class="pull-left" href="#"><img src="assets/dest/images/products/cart/2.png" alt=""></a>
 										<div class="media-body">
-											<span class="cart-item-title">Xiaomi 14 5G</span>
-											<span class="cart-item-options">Bộ nhớ: 256GB|Snapdragon 8 Gen 3</span>
-											<span class="cart-item-amount">1*<span>12.450.000₫</span></span>
+											<span class="cart-item-title">Sample Woman Top</span>
+											<span class="cart-item-options">Size: XS; Colar: Navy</span>
+											<span class="cart-item-amount">1*<span>$49.50</span></span>
 										</div>
 									</div>
 								</div>
@@ -90,15 +90,15 @@
 									<div class="media">
 										<a class="pull-left" href="#"><img src="assets/dest/images/products/cart/3.png" alt=""></a>
 										<div class="media-body">
-											<span class="cart-item-title">OPPO K11 5G</span>
-											<span class="cart-item-options">Bộ nhớ: 256GB|Snapdragon 782G</span>
-											<span class="cart-item-amount">1*<span>6.330.000₫</span></span>
+											<span class="cart-item-title">Sample Woman Top</span>
+											<span class="cart-item-options">Size: XS; Colar: Navy</span>
+											<span class="cart-item-amount">1*<span>$49.50</span></span>
 										</div>
 									</div>
 								</div>
 
 								<div class="cart-caption">
-									<div class="cart-total text-right">Tổng tiền: 24.730.000đ<span class="cart-total-value"></span></div>
+									<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">$34.55</span></div>
 									<div class="clearfix"></div>
 
 									<div class="center">
@@ -191,7 +191,7 @@
 										<div class="media">
 											<img width="35%" src="assets/dest/images/shoping1.jpg" alt="" class="pull-left">
 											<div class="media-body">
-												<p class="font-large">iPhone 11 Pro Max cũ</p>
+												<p class="font-large">Men's Belt</p>
 												<span class="color-gray your-order-info">Color: Red</span>
 												<span class="color-gray your-order-info">Size: M</span>
 												<span class="color-gray your-order-info">Qty: 1</span>
