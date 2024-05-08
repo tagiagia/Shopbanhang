@@ -15,6 +15,7 @@ return new class extends Migration
             $table->Increments('product_id');
             $table->integer('category_id');
             $table->integer('brand_id');
+            $table->String('product_name');
             $table->text('product_decs');
             $table->text('product_content');
             $table->String('product_price');

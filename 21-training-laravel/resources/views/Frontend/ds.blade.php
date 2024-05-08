@@ -20,7 +20,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>                                      
-                                        <th>Hinh anh</th>
+                                        <th>Hình ảnh</th>
                                         
                                     </tr>
                                 </thead>
