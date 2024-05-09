@@ -69,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="admin/images/1.jpg">
+                            <img alt="" src="admin/images/image.png">
                             <span class="username">
                                 <?php
 		$name = Session::get('admin_name');
@@ -191,7 +191,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!-- footer -->
             <div class="footer">
                 <div class="wthree-copyright">
-                    <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+                    <p>© 2024 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
                 </div>
             </div>
             <!-- / footer -->
