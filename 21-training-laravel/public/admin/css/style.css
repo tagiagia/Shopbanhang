@@ -17,7 +17,8 @@ html, body{
 	font-family: 'Roboto', sans-serif;
     font-size: 100%;
     overflow-x: hidden;
-    background:rgb(35, 136, 120);
+    background: #03a9f4;
+
 	background-size:cover;
 }
 body a{
