@@ -51,7 +51,7 @@
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">
-					<a href="#" id="logo"><img src="front/img/logolevent.png" width="100px" alt=""></a>
+					<a href="#" id="logo"><img src="front/img/logo.png" width="300px" alt=""></a>
 				</div>
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>

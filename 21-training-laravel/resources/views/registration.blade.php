@@ -23,7 +23,7 @@
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
+						<li><a href=""><i class="fa fa-home"></i> Nguyễn Văn Tiết/64A P, KP, Thuận An, Bình Dương</a></li>
 						<li><a href=""><i class="fa fa-phone"></i> 0358449577</a></li>
 					</ul>
 				</div>
@@ -166,7 +166,7 @@
                                         </div>
                                     </div>
                                     <div class="d-grid mx-auto">
-                                        <button type="submit" class="btn btn-dark btn-block">Signin</button>
+									<button type="submit" class="btn btn-dark btn-block" style="color: red; background-color: #007FFF;">Signin</button>
                                     </div>
                                 </form>
                             </div>
