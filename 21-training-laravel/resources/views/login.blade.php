@@ -5,7 +5,7 @@
     <base href="{{asset('/')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Levents - Login</title>
+    <title>Shop Bán Hàng - Login</title>
     <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="pull-left auto-width-left">
                     <ul class="top-menu menu-beta l-inline">
-                        <li><a href=""><i class="fa fa-home"></i>90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
+                        <li><a href=""><i class="fa fa-home"></i>Nguyễn Văn Tiết/64A P, KP, Thuận An, Bình Dương</a></li>
                         <li><a href=""><i class="fa fa-phone"></i> 0358449577</a></li>
                     </ul>
                 </div>

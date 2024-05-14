@@ -12,7 +12,7 @@
     <base href="{{asset('/')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Levents - Login</title>
+    <title>Shop Bán Hàng - Login</title>
     <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -36,7 +36,7 @@ $user = new AuthManager;
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
+						<li><a href=""><i class="fa fa-home"></i> Nguyễn Văn Tiết/64A P, KP, Thuận An, Bình Dương</a></li>
 						<li><a href=""><i class="fa fa-phone"></i> 0358449577</a></li>
 					</ul>
 				</div>
@@ -66,7 +66,7 @@ $user = new AuthManager;
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">
-					<a href="index.html" id="logo"><img src="front/img/logolevent.png" width="100px" alt=""></a>
+					<a href="index.html" id="logo"><img src="front/img/logo.png" width="300px" alt=""></a>
 				</div>
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>
@@ -194,10 +194,10 @@ $user = new AuthManager;
                                                     <div class="single-item-body" 
                                                         style="margin-top: 2cm;margin-left: 2cm">
                                                         <p class="single-item-title">
-                                                        <p name ="product_name">{{$items->product_name}}</p>
+                                                        <p name="product_name" style="font-weight: bold; color: blue; font-size: 25px;">{{$items->product_name}}</p>
                                                         </p>
                                                         <p class="single-item-price" style="margin-top: 1cm">
-                                                            <span name ="product_price">{{$items->product_price}}VND</span>
+                                                        <span name="product_price" style="color: red;">{{$items->product_price}}VND</span>
                                                         </p>
                                                     </div>
                                                     <div class="clearfix"></div>
@@ -238,7 +238,7 @@ $user = new AuthManager;
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="beta-products-list">
-                            <h4>New Products</h4>
+                            <h4>Thông Tin Sản Phẩm</h4>
                             <div class="row">
                                 @foreach ($all_product as $key =>$items)
                                 <div class="col-sm-3">
@@ -248,9 +248,9 @@ $user = new AuthManager;
                                                     src="up/{{$items->product_image}}" alt=""></a>
                                         </div>
                                         <div class="single-item-body">
-                                            <p class="single-item-title">{{$items->product_name}}</p>
+                                        <p class="single-item-title" style="color: blue; font-weight: bold; font-size: 20px;">{{$items->product_name}}</p>
                                             <br>
-                                            <p class="single-item-price">
+                                            <<p class="single-item-price" style="color: red;">
                                                 <span>{{$items->product_price}}</span>
                                                 <br>
                                                 <br>

@@ -11,7 +11,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Levents </title>
+	<title>Shop Bán Hàng </title>
 	<link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -33,8 +33,8 @@
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href=""><i class="fa fa-home"></i> Hồ Chí Minh</a></li>
-						<li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
+						<li><a href=""><i class="fa fa-home"></i> Nguyễn Văn Tiết/64A P, KP, Thuận An, Bình Dương</a></li>
+						<li><a href=""><i class="fa fa-phone"></i>0358449577</a></li>
 					</ul>
 				</div>
 				<div class="pull-right auto-width-right">
@@ -202,8 +202,7 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="beta-products-list">
-							<h4>New Products</h4>						
-														
+						<h5 style="font-weight: bold;">Thông Tin Sản Phẩm</h5>												
 							<div class="row">
 								@foreach ($all_product as $key =>$items)
 								<div class="col-sm-3">
@@ -212,9 +211,9 @@
 											<a href="{{URL::to('/showproduct/'.$items->product_id)}}"><img src="up/{{$items->product_image}}" alt=""></a>
 										</div>
 										<div class="single-item-body">
-											<p class="single-item-title">{{$items->product_name}}</p>
+										<p class="single-item-title" style="color: blue; font-weight: bold; font-size: 20px;">{{$items->product_name}}</p>
 											<br>
-											<p class="single-item-price">
+											<<p class="single-item-price" style="color: red;">
 												<span>{{$items->product_price}}VND</span>
 												<br>
 												<br>
