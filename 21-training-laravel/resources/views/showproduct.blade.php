@@ -250,7 +250,7 @@ $user = new AuthManager;
                                         <div class="single-item-body">
                                         <p class="single-item-title" style="color: blue; font-weight: bold; font-size: 20px;">{{$items->product_name}}</p>
                                             <br>
-                                            <<p class="single-item-price" style="color: red;">
+                                            <p class="single-item-price" style="color: red;">
                                                 <span>{{$items->product_price}}</span>
                                                 <br>
                                                 <br>
